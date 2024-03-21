@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -10,6 +10,10 @@ Sentry.init({
   dsn: 'https://73554a230488d34c6008a3d2a4820f9b@o4506946117632000.ingest.us.sentry.io/4506946133295104',
   integrations: [
     Sentry.browserTracingIntegration(),
+    Sentry.metrics.metricsAggregatorIntegration(),
+    Sentry.reactRouterV6BrowserTracingIntegration({
+      useEffect: React.useEffect,
+    }),
     Sentry.replayIntegration({
       maskAllText: false,
       blockAllMedia: false,
