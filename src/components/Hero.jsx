@@ -33,7 +33,7 @@ export default function Hero() {
       <div className='h-5/6 w-full flex-center flex-col'>
         <p
           id='hero'
-          className='hero-title'
+          className='hero-title max-[760px]:absolute max-[760px]:bottom-[40%]'
         >
           iPhone 15 Pro
         </p>
